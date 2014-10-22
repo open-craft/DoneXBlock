@@ -22,3 +22,5 @@ between MOOC providers is probably worth pursuing -- it'd be to the
 benefit of learners on all platforms, and ultimately, the industry as
 a whole if we had consistency of experience between platforms where
 convenient.
+
+This now includes some styling and wording tweaks from Stanford.

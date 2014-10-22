@@ -14,82 +14,84 @@
 }
 
 .done_windshield_animated {
-    -webkit-transition: background-color 0.4s, box-shadow 0.4s, color 0.4s, text-shadow 0.4s, background-image 0.4s;
-    transition: background-color 0.4s, box-shadow 0.4s, color 0.4s, text-shadow 0.4s, background-image 0.4s;
+    -webkit-transition: background-color 0.4s, color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, color 0.4s, background-image 0.4s;
 }
 
 .done_windshield {
     cursor: pointer;
     width:200px; 
     height:100%;
-    border: 1px solid #0d72a2;
+    padding: 5px 10px;
     border-radius: 3px;
     font-family: 'Open Sans', Verdana, Geneva, sans-serif, sans-serif;
-    font-size: 13.333333015441895px;
-    font-weight : bold;
+    font-size: 16px;
+    font-weight: bold;
     letter-spacing: normal;
 }
 
 .done_windshield_on { /* "Mark as complete"*/
     -webkit-font-smoothing: antialiased;
-    background-color: #1e8bbe;
-    background-image: linear-gradient(rgb(109, 204, 241), rgb(56, 168, 229));
+    background-color: #666;
+    background-image: linear-gradient(rgb(125, 125, 125), rgb(75, 75, 75));
     border-radius: 3px;
-    border: 1px solid rgb(43, 122, 163);
-    box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px;
+    border: 1px solid rgb(50, 50, 50);
     color: #fff;
-    text-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 0px;
 }
 
 .done_windshield_off { /* Undo */
     -webkit-font-smoothing: antialiased;
-    background-color: #e1e1e1;
-    background-image: linear-gradient(rgb(225, 255, 225), rgb(202, 232, 202));
+    background-color: #696;
+    background-image: linear-gradient(rgb(100, 175, 125), rgb(50, 125, 75));
     border-radius: 3px;
-    border: 1px solid #cacaca;
-    box-shadow: rgb(251, 251, 251) 0px 1px 0px 0px inset;
-    color: #048904; 
-    text-shadow: rgb(248, 248, 248) 0px 1px 0px;
+    border: 1px solid rgb(0, 75, 25);
+    color: #fff;
 }
 
 .done_windshield_on .done_wipe_on {
-  display:inline-block;
-  width:80%;
-  overflow:hidden;
-  text-overflow: clip;
-  white-space:nowrap;
+    position: relative;
+    left: 10px;
+    display:inline-block;
+    width:80%;
+    overflow:hidden;
+    text-overflow: clip;
+    white-space:nowrap;
 }
 
 .done_windshield_off .done_wipe_on {
-  display:inline-block;
-  width:0;
-  overflow:hidden;
-  text-overflow: clip;
-  white-space:nowrap;
+    display:inline-block;
+    width:0;
+    overflow:hidden;
+    text-overflow: clip;
+    white-space:nowrap;
 }
 
 .done_wiper {
-  display:inline-block;
-  width:7%;
-  vertical-align:-10 !important;
+    position: relative;
+    bottom: 3px;
+    left: 5px;
+    display: inline-block;
+    width: 10%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    font-style: normal !important;
 }
 
 .done_windshield_off .done_wipe_off {
-  display:inline-block;
-  width:80%;
-  overflow:hidden;
-  text-overflow: clip;
-  white-space:nowrap;
+    position: relative;
+    left: 5px;
+    display:inline-block;
+    width:80%;
+    overflow:hidden;
+    text-overflow: clip;
+    white-space:nowrap;
 }
 
 .done_windshield_on .done_wipe_off {
-  display:inline-block;
-  width:0;
-  overflow:hidden;
-  text-overflow: clip;
-  white-space: nowrap;
-}
-
-.ui_icon_gray {
-    background-image: url("//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/images/ui-icons_888888_256x240.png");
+    display:inline-block;
+    width:0;
+    overflow:hidden;
+    text-overflow: clip;
+    white-space: nowrap;
 }

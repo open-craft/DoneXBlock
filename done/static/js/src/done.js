@@ -15,7 +15,6 @@ function DoneXBlock(runtime, element, data) {
         $('.done_windshield', element).addClass("done_windshield_animated")
         $('.done_windshield', element).click(function(){
             $(this).toggleClass("done_windshield_on done_windshield_off");
-            $('.done-wiper i', this).toggleClass("icon-plus-sign icon-minus-sign");
             
             $.ajax({
                 type: "POST",

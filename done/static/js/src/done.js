@@ -9,10 +9,8 @@ if (typeof Logger === 'undefined') {
 function update_knob(element, data) {
   if($('.done_onoffswitch-checkbox', element).prop("checked")) {
     $(".done_onoffswitch-switch", element).css("background-image", "url("+data['checked']+")");
-    $(".done_onoffswitch-switch", element).css("background-color", "#018801;");
   } else {
-    $(".done_onoffswitch-switch", element).css("background-image", "url("+data['unchecked']+")");
-    $(".done_onoffswitch-switch", element).css("background-color", "#FFFFFF;");
+    $(".done_onoffswitch-switch", element).css("background-image", "none");
   }
 }
 

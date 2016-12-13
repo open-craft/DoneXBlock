@@ -1,97 +1,124 @@
 /* CSS for DoneXBlock */
 
-.done_block {
-    width:100%; 
-    height:35px;
-    display:flex;
+.done_aria_hidden {
+    position:absolute;
+    color:rgba(0,0,0,0);
+    overflow:hidden;
+    height:1px;
+    width:1px;
+}
+
+.done_onoffswitch_wrapper {
+    display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
-.done_wipe {
-    -webkit-transition: width 0.2s;
-    transition: width 0.2s;
-    text-align:center;
+.done_onoffswitch {
+    position: relative; width: 180px;
+    width: 180px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
-.done_windshield_animated {
-    -webkit-transition: background-color 0.4s, color 0.4s, background-image 0.4s;
-    transition: background-color 0.4s, color 0.4s, background-image 0.4s;
+.done_onoffswitch-checkbox {
+    display: none;
 }
 
-.done_windshield {
-    cursor: pointer;
-    width:200px; 
-    height:100%;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-family: 'Open Sans', Verdana, Geneva, sans-serif, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: normal;
+.done_onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #000; border-radius: 5px;
 }
 
-.done_windshield_on { /* "Mark as complete"*/
-    -webkit-font-smoothing: antialiased;
+.done_onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+}
+
+.done_animated .done_onoffswitch-inner {
+    -moz-transition: margin 0.1s ease-in 0s; -webkit-transition: margin 0.1s ease-in 0s;
+    -o-transition: margin 0.1s ease-in 0s; transition: margin 0.1s ease-in 0s;
+}
+
+.done_onoffswitch-inner:before, .done_onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 40px; padding: 5px; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.done_onoffswitch-inner:after {
+    content: "Mark as complete";
     background-color: #666;
     background-image: linear-gradient(rgb(125, 125, 125), rgb(75, 75, 75));
-    border-radius: 3px;
-    border: 1px solid rgb(50, 50, 50);
     color: #fff;
+    text-align: center;
 }
-
-.done_windshield_off { /* Undo */
-    -webkit-font-smoothing: antialiased;
+.done_onoffswitch-inner:before {
+    content: "Completed";
+    padding-right: 90px;
     background-color: #696;
     background-image: linear-gradient(rgb(100, 175, 125), rgb(50, 125, 75));
-    border-radius: 3px;
-    border: 1px solid rgb(0, 75, 25);
     color: #fff;
+    text-align: right;
 }
 
-.done_windshield_on .done_wipe_on {
-    position: relative;
-    left: 10px;
-    display:inline-block;
-    width:80%;
-    overflow:hidden;
-    text-overflow: clip;
-    white-space:nowrap;
+.done_animated .done_onoffswitch-switch {
+    -moz-transition: all 0.1s ease-in 0s; -webkit-transition: all 0.1s ease-in 0s;
+    -o-transition: all 0.1s ease-in 0s; transition: all 0.1s ease-in 0s; 
 }
 
-.done_windshield_off .done_wipe_on {
-    display:inline-block;
-    width:0;
-    overflow:hidden;
-    text-overflow: clip;
-    white-space:nowrap;
-}
-
-.done_wiper {
-    position: relative;
-    bottom: 3px;
-    left: 5px;
-    display: inline-block;
-    width: 10%;
+.done_onoffswitch-switch {
     height: 25px;
-    font-size: 20px;
-    text-align: center;
-    font-style: normal !important;
+    display: block; width: 25px; margin: 7px;
+    background-position: center;
+    background-size: 25px 25px;
+    position: absolute; top: 0; bottom: 0; right: 138px;
+    content: "X";
+    text-color:black;
 }
 
-.done_windshield_off .done_wipe_off {
-    position: relative;
-    left: 5px;
-    display:inline-block;
-    width:80%;
-    overflow:hidden;
-    text-overflow: clip;
-    white-space:nowrap;
+.done_onoffswitch-checkbox:checked + .done_onoffswitch-label .done_onoffswitch-inner {
+    margin-left: 0;
 }
 
-.done_windshield_on .done_wipe_off {
-    display:inline-block;
-    width:0;
-    overflow:hidden;
-    text-overflow: clip;
-    white-space: nowrap;
+.done_onoffswitch-checkbox:checked + .done_onoffswitch-label .done_onoffswitch-switch {
+    right: 5px;
+}
+
+.done-checked {
+    background-color: #018801;
+}
+
+.done-unchecked {
+    background-color: #FFFFFF;
+}
+
+.done_grow {
+    flex-grow: 1;
+}
+
+.done_nogrow {
+    flex-grow: 0;
+}
+
+/* Right to left (rtl) language css */
+
+body.rtl .done_onoffswitch-checkbox:checked + .done_onoffswitch-label .done_onoffswitch-inner {
+    margin-right: 0;
+}
+body.rtl .done_onoffswitch-checkbox:checked + .done_onoffswitch-label .done_onoffswitch-switch {
+    right: 0px;
+}
+
+body.rtl .done_onoffswitch-inner {
+    margin-right: -100%;
+}
+
+body.rtl .done_onoffswitch-inner:before {
+    padding-right: 10px;
+    text-align: right;
+}
+
+body.rtl .done_onoffswitch-inner:after {
+    padding-left: 22px;
+    float: left;
+    text-align: left;
 }

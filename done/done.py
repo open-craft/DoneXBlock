@@ -54,6 +54,10 @@ class DoneXBlock(XBlock):
 
         return {'state': self.done}
 
+    # Decorate the view in order to support multiple devices e.g. mobile
+    # See: https://openedx.atlassian.net/wiki/display/MA/Course+Blocks+API
+    # section 'View @supports(multi_device) decorator'
+    @XBlock.supports('multi_device')
     def student_view(self, context=None):  # pylint: disable=unused-argument
         """
         The primary view of the DoneXBlock, shown to students
